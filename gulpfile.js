@@ -2,7 +2,7 @@ const { src, dest, watch } = require('gulp');
 const pug = require('gulp-pug');
 
 const PUG_URL = 'pug/*.pug';
-const SCSS_URL = 'scss/*.scss';
+const SCSS_URL = 'scss/**/*.scss';
 
 const sass = require('gulp-sass')(require('sass'));
 function css() {
