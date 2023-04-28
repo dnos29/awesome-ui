@@ -8,14 +8,14 @@ const sass = require('gulp-sass')(require('sass'));
 function css() {
 	return src(SCSS_URL)
 		.pipe(sass().on('error', sass.logError))
-		.pipe(dest('css'));
+		.pipe(dest('dest/css'));
 }
 exports.css = css;
 
 function html() {
 	return src(PUG_URL)
 		.pipe(pug({ pretty: true }))
-		.pipe(dest('html'));
+		.pipe(dest('dest/html'));
 }
 exports.html = html;
 

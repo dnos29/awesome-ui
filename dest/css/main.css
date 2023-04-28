@@ -1,0 +1,289 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 1279px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 0px 20px;
+  }
+}
+
+.keep-ratio {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.keep-ratio-container {
+  aspect-ratio: 16/9;
+  position: relative;
+  background-color: tomato;
+  border-radius: 8px;
+}
+.keep-ratio-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.slider {
+  margin-top: 60px;
+}
+.slider-container {
+  margin: 0 auto;
+  position: relative;
+  width: fit-content;
+}
+.slider-item {
+  background-color: tomato;
+  border-radius: 8px;
+  width: 400px;
+  aspect-ratio: 16/9;
+  position: relative;
+  overflow: hidden;
+}
+.slider-item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.slider-item-img.active {
+  opacity: 1;
+  visibility: visible;
+}
+.slider-indicator-container {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  gap: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.slider-indicator-item {
+  width: 30px;
+  height: 6px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+.slider-indicator-item:last-child {
+  background-color: #fff;
+  width: 48px;
+}
+
+@keyframes appearRTL {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+.dropdown {
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+.dropdown-item {
+  background-color: #df4a3e;
+  padding: 20px;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.dropdown-item:hover {
+  background-color: #c64137;
+}
+.dropdown-item.selected {
+  border-radius: 6px;
+  position: relative;
+}
+.dropdown-item.selected::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background-color: transparent;
+  top: 100%;
+  left: 0;
+}
+.dropdown-list {
+  margin-top: 20px;
+  border-radius: 6px;
+  display: none;
+  position: absolute;
+  width: 100vw;
+}
+.dropdown-list .dropdown-item:first-child {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.dropdown-list .dropdown-item:first-child::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  clip-path: polygon(50% 0, 100% 50%, 0 50%);
+  background-color: #df4a3e;
+  position: absolute;
+  bottom: calc(100% - 10px);
+  left: 30px;
+}
+.dropdown-list .dropdown-item:first-child:hover::after {
+  background-color: #c64137;
+}
+.dropdown-list .dropdown-item:last-child {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.dropdown:hover .dropdown-list {
+  display: block;
+}
