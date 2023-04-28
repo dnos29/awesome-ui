@@ -1,0 +1,12 @@
+h4 Dropdown
+p 
+  a(href="https://collectui.com/designers/maxjosino/dropdown") Source 
+.dropdown 
+  .dropdown-item.selected 
+    span.dropdown-item-text Call to action 
+    span.dropwn-item-icon ▾
+  .dropdown-list
+    each item in ['New project', 'View profile', 'Settings', 'Logout']
+      .dropdown-item
+        span.dropdown-item-text= item
+        span.dropwn-item-icon ▾ 

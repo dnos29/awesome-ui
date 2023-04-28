@@ -87,7 +87,6 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 
@@ -135,6 +134,7 @@ table {
 
 * {
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 .container {
@@ -223,4 +223,67 @@ table {
   100% {
     left: 0%;
   }
+}
+.dropdown {
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+.dropdown-item {
+  background-color: #df4a3e;
+  padding: 20px;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.dropdown-item:hover {
+  background-color: #c64137;
+}
+.dropdown-item.selected {
+  border-radius: 6px;
+  position: relative;
+}
+.dropdown-item.selected::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background-color: transparent;
+  top: 100%;
+  left: 0;
+}
+.dropdown-list {
+  margin-top: 20px;
+  border-radius: 6px;
+  display: none;
+  position: absolute;
+  width: 100vw;
+}
+.dropdown-list .dropdown-item:first-child {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.dropdown-list .dropdown-item:first-child::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  clip-path: polygon(50% 0, 100% 50%, 0 50%);
+  background-color: #df4a3e;
+  position: absolute;
+  bottom: calc(100% - 10px);
+  left: 30px;
+}
+.dropdown-list .dropdown-item:first-child:hover::after {
+  background-color: #c64137;
+}
+.dropdown-list .dropdown-item:last-child {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.dropdown:hover .dropdown-list {
+  display: block;
 }

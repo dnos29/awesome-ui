@@ -23,6 +23,12 @@ exports.watch = function () {
 	watch(SCSS_URL, css);
 	watch(PUG_URL, html);
 };
+
+exports.build = function (done) {
+	css();
+	html();
+	done();
+};
 // function defaultTasks(cb) {
 // 	console.log('Gulp works');
 // 	cb();
